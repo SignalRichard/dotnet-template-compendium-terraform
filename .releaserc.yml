@@ -17,10 +17,8 @@ plugins:
     generateNotesCmd: "echo '${nextRelease.notes}' > RELEASE-NOTES.md"
   - path: "@semantic-release/github"
     assets:
-    - path: b/Compendium.AclHelpers.zip
-      label: Compendium.AclHelpers.zip
-    - path: b/_manifest/spdx_2.2/manifest.spdx.json
-      label: manifest.spdx.json
+    - path: a/Compendium.Terraform/Compendium.Terraform.nupkg
+      label: Compendium.Terraform.nupkg
   - path: "@semantic-release/git"
     assets:
     - CHANGELOG.md
