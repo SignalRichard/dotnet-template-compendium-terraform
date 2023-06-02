@@ -11,8 +11,10 @@
     <description>Terraform boilerplate directory setup.</description>
     <copyright>Copyright (c) 2023 Richard Bolhofer</copyright>
     <tags>dotnet-new template terraform</tags>
+    <readme>content\Compendium.Terraform\.template.config\README.md</readme>
   </metadata>
   <files>
+    <file src="Compendium.Terraform\.template.config\README.md" target="content\Compendium.Terraform\.template.config\README.md" />
     <file src="Compendium.Terraform\.template.config\template.json" target="content\Compendium.Terraform\.template.config\template.json" />
     <file src="Compendium.Terraform\infrastructure\.gitignore" target="content\Compendium.Terraform\infrastructure\.gitignore" />
     <file src="Compendium.Terraform\infrastructure\backend.tf" target="content\Compendium.Terraform\infrastructure\backend.tf" />
