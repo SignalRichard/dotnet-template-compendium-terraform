@@ -1,5 +1,6 @@
 param (
+    [String] $Nuspec,
     [string] $SemanticVersion
 )
 
-nuget pack Compendium.Terraform.nuspec -NoDefaultExcludes -OutputFileNamesWithoutVersion -Version $SemanticVersion
+nuget pack $Nuspec -NoDefaultExcludes -OutputFileNamesWithoutVersion -Version $SemanticVersion
