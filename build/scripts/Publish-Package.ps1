@@ -2,4 +2,4 @@ param(
     [string] $PackagePath
 )
 
-nuget publish $PackagePath -Source $env:NUGETSOURCE
+nuget push $PackagePath -Source $env:NUGETSOURCE
