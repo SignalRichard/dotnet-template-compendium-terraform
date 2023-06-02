@@ -10,6 +10,8 @@ concurrency:
 env:
   PACKAGE_NAME: Compendium.Terraform.nupkg
   ARTIFACT_NAME: Compendium.Terraform
+  NODE_VERSION: '18'
+  NUGET_VERSION: '6.5.0'
 defaults:
   run:
     shell: pwsh
@@ -26,7 +28,7 @@ jobs:
     - name: Setup Node Version
       uses: actions/setup-node@master
       with:
-        node-version: 18
+        node-version: ${{ env.NODE_VERSION }}
     - name: Node Package Restore
       run: ./build/scripts/Install-NodePackages.ps1
     - name: Semantic Release (Dry-Run)
@@ -72,14 +74,14 @@ jobs:
       uses: actions/checkout@v3
     - uses: nuget/setup-nuget@v1
       with:
-        nuget-version: '6.5.0'
+        nuget-version: ${{ env.NUGET_VERSION }}
     - name: Package Template
       run: ./../build/scripts/Export-Package.ps1 -Nuspec "Compendium.Terraform.nuspec" -SemanticVersion "${{ needs.SemanticVersion.outputs.semantic_version }}"
     - name: Publish Artifact
       uses: actions/upload-artifact@v3
       with:
         name: ${{ env.ARTIFACT_NAME }}
-        path: src/Compendium.Terraform/${{ env.PACKAGE_NAME }}
+        path: src/${{ env.PACKAGE_NAME }}
   Release:
     if: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
@@ -100,11 +102,11 @@ jobs:
     - uses: nuget/setup-nuget@v1
       with:
         nuget-api-key: ${{ secrets.NUGETAPIKEY }}
-        nuget-version: '6.5.0'
+        nuget-version: ${{ env.NUGET_VERSION }}
     - name: Setup Node Version
       uses: actions/setup-node@master
       with:
-        node-version: 18
+        node-version: ${{ env.NODE_VERSION }}
     - name: Node Package Restore
       run: ./build/scripts/Install-NodePackages.ps1
     - name: Semantic Release
@@ -115,6 +117,6 @@ jobs:
         GH_REF: ${{ github.ref }}
     - name: Publish Module
       run: |
-        ./build/scripts/Publish-Package.ps1 -PackagePath "src/Compendium.Terraform/${{ env.PACKAGE_NAME }}"
+        ./build/scripts/Publish-Package.ps1 -PackagePath "a/${{ env.ARTIFACT_NAME }}/${{ env.PACKAGE_NAME }}"
       env:
         NUGETSOURCE: ${{ vars.NUGETSOURCE }}
