@@ -10,8 +10,11 @@
     <license type="expression">MIT</license>
     <description>Terraform boilerplate directory setup.</description>
     <copyright>Copyright (c) 2023 Richard Bolhofer</copyright>
-    <tags>dotnet-new template terraform</tags>
+    <tags>dotnet-new templates terraform</tags>
     <readme>content\Compendium.Terraform\.template.config\README.md</readme>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
   </metadata>
   <files>
     <file src="Compendium.Terraform\.template.config\README.md" target="content\Compendium.Terraform\.template.config\README.md" />
