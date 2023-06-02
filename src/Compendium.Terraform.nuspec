@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Compendium.Terraform</id>
+    <version>0.0.0</version>
+    <title>Compendium.Terraform</title>
+    <authors>Richard Bolhofer</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>Terraform boilerplate directory setup.</description>
+    <copyright>Copyright (c) 2023 Richard Bolhofer</copyright>
+    <tags>dotnet-new template terraform</tags>
+  </metadata>
+  <files>
+    <file src="Compendium.Terraform\.template.config\template.json" target="content\Compendium.Terraform\.template.config\template.json" />
+    <file src="Compendium.Terraform\infrastructure\.gitignore" target="content\Compendium.Terraform\infrastructure\.gitignore" />
+    <file src="Compendium.Terraform\infrastructure\backend.tf" target="content\Compendium.Terraform\infrastructure\backend.tf" />
+    <file src="Compendium.Terraform\infrastructure\main.tf" target="content\Compendium.Terraform\infrastructure\main.tf" />
+    <file src="Compendium.Terraform\infrastructure\outputs.tf" target="content\Compendium.Terraform\infrastructure\outputs.tf" />
+    <file src="Compendium.Terraform\infrastructure\providers.tf" target="content\Compendium.Terraform\infrastructure\providers.tf" />
+    <file src="Compendium.Terraform\infrastructure\README.md" target="content\Compendium.Terraform\infrastructure\README.md" />
+    <file src="Compendium.Terraform\infrastructure\variables.tf" target="content\Compendium.Terraform\infrastructure\variables.tf" />
+    <file src="Compendium.Terraform\infrastructure\versions.tf" target="content\Compendium.Terraform\infrastructure\versions.tf" />
+  </files>
+</package>

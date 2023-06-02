@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Richard Bolhofer",
+  "classifications": [ "Terraform", "IaC" ],
+  "tags": {
+    "type": "item",
+    "language": "HCL"
+  },
+  "identity": "SignalRichard.dotnet-template-compendium-terraform",
+  "name": "Compendium.Terraform",
+  "shortName": "terraform",
+  "description": "Terraform boilerplate directory setup."
+}
