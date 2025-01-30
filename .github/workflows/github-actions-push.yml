@@ -11,7 +11,8 @@ env:
   PACKAGE_NAME: Compendium.Terraform.nupkg
   ARTIFACT_NAME: Compendium.Terraform
   NODE_VERSION: '18'
-  NUGET_VERSION: '6.5.0'
+  NUGET_VERSION: '5.3.1'
+  TERRAFORM_VERSION: '~ 1.10'
 defaults:
   run:
     shell: pwsh
@@ -51,7 +52,7 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
-        terraform_version: "~ 1.10"
+        terraform_version: ${{ env.TERRAFORM_VERSION }}
         terraform_wrapper: false
     - name: terraform init
       run: ./../../../build/scripts/Initialize-Terraform.ps1 
@@ -79,7 +80,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - uses: nuget/setup-nuget@v1
+    - uses: nuget/setup-nuget@v2
       with:
         nuget-version: ${{ env.NUGET_VERSION }}
     - name: Package Template
@@ -106,7 +107,7 @@ jobs:
       with:
         name: ${{ env.ARTIFACT_NAME }}
         path: a/${{ env.ARTIFACT_NAME }}
-    - uses: nuget/setup-nuget@v1
+    - uses: nuget/setup-nuget@v2
       with:
         nuget-api-key: ${{ secrets.NUGETAPIKEY }}
         nuget-version: ${{ env.NUGET_VERSION }}
