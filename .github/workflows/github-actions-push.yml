@@ -18,7 +18,7 @@ defaults:
     shell: pwsh
 jobs:
   SemanticVersion:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       semantic_version: ${{ steps.semantic_release.outputs.SEMANTIC_VERSION }}
     steps:
