@@ -19,13 +19,15 @@
   <files>
     <file src="Compendium.Terraform\.template.config\README.md" target="content\Compendium.Terraform\.template.config\README.md" />
     <file src="Compendium.Terraform\.template.config\template.json" target="content\Compendium.Terraform\.template.config\template.json" />
-    <file src="Compendium.Terraform\infrastructure\.gitignore" target="content\Compendium.Terraform\infrastructure\.gitignore" />
-    <file src="Compendium.Terraform\infrastructure\backend.tf" target="content\Compendium.Terraform\infrastructure\backend.tf" />
-    <file src="Compendium.Terraform\infrastructure\main.tf" target="content\Compendium.Terraform\infrastructure\main.tf" />
-    <file src="Compendium.Terraform\infrastructure\outputs.tf" target="content\Compendium.Terraform\infrastructure\outputs.tf" />
-    <file src="Compendium.Terraform\infrastructure\providers.tf" target="content\Compendium.Terraform\infrastructure\providers.tf" />
-    <file src="Compendium.Terraform\infrastructure\README.md" target="content\Compendium.Terraform\infrastructure\README.md" />
-    <file src="Compendium.Terraform\infrastructure\variables.tf" target="content\Compendium.Terraform\infrastructure\variables.tf" />
-    <file src="Compendium.Terraform\infrastructure\versions.tf" target="content\Compendium.Terraform\infrastructure\versions.tf" />
+    <file src="Compendium.Terraform\infra\tests\main.tftest.hcl" target="content\Compendium.Terraform\infra\tests\main.tftest.hcl" />
+    <file src="Compendium.Terraform\infra\.gitignore" target="content\Compendium.Terraform\infra\.gitignore" />
+    <file src="Compendium.Terraform\infra\backend.tf" target="content\Compendium.Terraform\infra\backend.tf" />
+    <file src="Compendium.Terraform\infra\config.local.tfbackend" target="content\Compendium.Terraform\infra\config.local.tfbackend" />
+    <file src="Compendium.Terraform\infra\main.tf" target="content\Compendium.Terraform\infra\main.tf" />
+    <file src="Compendium.Terraform\infra\outputs.tf" target="content\Compendium.Terraform\infra\outputs.tf" />
+    <file src="Compendium.Terraform\infra\providers.tf" target="content\Compendium.Terraform\infra\providers.tf" />
+    <file src="Compendium.Terraform\infra\README.md" target="content\Compendium.Terraform\infra\README.md" />
+    <file src="Compendium.Terraform\infra\variables.tf" target="content\Compendium.Terraform\infra\variables.tf" />
+    <file src="Compendium.Terraform\infra\versions.tf" target="content\Compendium.Terraform\infra\versions.tf" />
   </files>
 </package>

@@ -1,1 +1,1 @@
-terraform validate
+terraform test

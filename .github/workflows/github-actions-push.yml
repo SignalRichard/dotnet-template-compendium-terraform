@@ -53,7 +53,9 @@ jobs:
     - name: terraform fmt
       run: ./../../../build/scripts/Test-TerraformFormat.ps1 
     - name: terraform validate
-      run: ./../../../build/scripts/Test-Terraform.ps1 
+      run: ./../../../build/scripts/Test-TerraformValidate.ps1 
+    - name: terraform test
+      run: ./../../../build/scripts/Test-Terraform.ps1
     - name: terraform plan
       run: ./../../../build/scripts/Build-Terraform.ps1 -PlanName "terraform.tfplan"
       env:
