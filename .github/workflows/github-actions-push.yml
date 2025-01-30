@@ -39,7 +39,7 @@ jobs:
         GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
         GH_REF: ${{ github.ref }}
   Test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: pwsh
@@ -69,7 +69,7 @@ jobs:
     - name: terraform apply
       run: ./../../../build/scripts/Deploy-Terraform.ps1 -PlanName "terraform.tfplan"
   Build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs:
     - SemanticVersion
     - Test
@@ -92,7 +92,7 @@ jobs:
         path: src/${{ env.PACKAGE_NAME }}
   Release:
     if: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs:
     - SemanticVersion
     - Build
