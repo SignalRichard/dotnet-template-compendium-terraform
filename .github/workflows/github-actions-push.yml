@@ -86,7 +86,7 @@ jobs:
     - name: Package Template
       run: ./../build/scripts/Export-Package.ps1 -Nuspec "Compendium.Terraform.nuspec" -SemanticVersion "${{ needs.SemanticVersion.outputs.semantic_version }}"
     - name: Publish Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ env.ARTIFACT_NAME }}
         path: src/${{ env.PACKAGE_NAME }}
@@ -103,7 +103,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Download Artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: ${{ env.ARTIFACT_NAME }}
         path: a/${{ env.ARTIFACT_NAME }}
