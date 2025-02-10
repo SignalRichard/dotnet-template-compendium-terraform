@@ -1,8 +1,12 @@
-## [1.0.2](https://github.com/SignalRichard/dotnet-template-compendium-terraform/compare/v1.0.1...v1.0.2) (2023-06-02)
+## [2.0.0](https://github.com/SignalRichard/dotnet-template-compendium-terraform/compare/v1.0.2...v2.0.0) (2025-02-10)
 
 
-### Bug Fixes
+### ⚠ BREAKING CHANGES
 
-* package type ([6c34d3a](https://github.com/SignalRichard/dotnet-template-compendium-terraform/commit/6c34d3af58cf152c9cc5cbbc06ca4e7f2773e8db))
+* Template places all files at the root module level
+
+### Features
+
+* add terraform tests to template ([#3](https://github.com/SignalRichard/dotnet-template-compendium-terraform/issues/3)) ([74fca5d](https://github.com/SignalRichard/dotnet-template-compendium-terraform/commit/74fca5d2817b1e014c19e94523f1bd5b4a8d6efe))
 
 
