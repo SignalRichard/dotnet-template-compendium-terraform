@@ -43,7 +43,7 @@ jobs:
     defaults:
       run:
         shell: pwsh
-        working-directory: src/Compendium.Terraform/infra
+        working-directory: src/Compendium.Terraform/module
     steps:
     - name: Checkout
       uses: actions/checkout@v3
