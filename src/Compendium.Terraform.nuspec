@@ -8,24 +8,26 @@
     <owners></owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <description>Terraform boilerplate directory setup.</description>
+    <description>Terraform module.</description>
     <copyright>Copyright (c) 2023 Richard Bolhofer</copyright>
     <tags>dotnet-new templates terraform</tags>
-    <readme>content\Compendium.Terraform\.template.config\README.md</readme>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
   </metadata>
   <files>
-    <file src="Compendium.Terraform\.template.config\README.md" target="content\Compendium.Terraform\.template.config\README.md" />
-    <file src="Compendium.Terraform\.template.config\template.json" target="content\Compendium.Terraform\.template.config\template.json" />
-    <file src="Compendium.Terraform\infrastructure\.gitignore" target="content\Compendium.Terraform\infrastructure\.gitignore" />
-    <file src="Compendium.Terraform\infrastructure\backend.tf" target="content\Compendium.Terraform\infrastructure\backend.tf" />
-    <file src="Compendium.Terraform\infrastructure\main.tf" target="content\Compendium.Terraform\infrastructure\main.tf" />
-    <file src="Compendium.Terraform\infrastructure\outputs.tf" target="content\Compendium.Terraform\infrastructure\outputs.tf" />
-    <file src="Compendium.Terraform\infrastructure\providers.tf" target="content\Compendium.Terraform\infrastructure\providers.tf" />
-    <file src="Compendium.Terraform\infrastructure\README.md" target="content\Compendium.Terraform\infrastructure\README.md" />
-    <file src="Compendium.Terraform\infrastructure\variables.tf" target="content\Compendium.Terraform\infrastructure\variables.tf" />
-    <file src="Compendium.Terraform\infrastructure\versions.tf" target="content\Compendium.Terraform\infrastructure\versions.tf" />
+    <file src="Compendium.Terraform\.template.config\README.md" target="content\.template.config\README.md" />
+    <file src="Compendium.Terraform\.template.config\template.json" target="content\.template.config\template.json" />
+    <file src="Compendium.Terraform\module\tests\main.tftest.hcl" target="content\tests\main.tftest.hcl" />
+    <file src="Compendium.Terraform\module\.gitignore" target="content\.gitignore" />
+    <file src="Compendium.Terraform\module\backend.tf" target="content\backend.tf" />
+    <file src="Compendium.Terraform\module\config.local.tfbackend" target="content\config.local.tfbackend" />
+    <file src="Compendium.Terraform\module\locals.tf" target="content\locals.tf" />
+    <file src="Compendium.Terraform\module\main.tf" target="content\main.tf" />
+    <file src="Compendium.Terraform\module\outputs.tf" target="content\outputs.tf" />
+    <file src="Compendium.Terraform\module\providers.tf" target="content\providers.tf" />
+    <file src="Compendium.Terraform\module\README.md" target="content\README.md" />
+    <file src="Compendium.Terraform\module\terraform.tf" target="content\terraform.tf" />
+    <file src="Compendium.Terraform\module\variables.tf" target="content\variables.tf" />
   </files>
 </package>

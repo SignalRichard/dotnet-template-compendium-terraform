@@ -11,13 +11,14 @@ env:
   PACKAGE_NAME: Compendium.Terraform.nupkg
   ARTIFACT_NAME: Compendium.Terraform
   NODE_VERSION: '18'
-  NUGET_VERSION: '6.5.0'
+  NUGET_VERSION: '5.3.1'
+  TERRAFORM_VERSION: '~ 1.10'
 defaults:
   run:
     shell: pwsh
 jobs:
   SemanticVersion:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       semantic_version: ${{ steps.semantic_release.outputs.SEMANTIC_VERSION }}
     steps:
@@ -38,22 +39,29 @@ jobs:
         GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
         GH_REF: ${{ github.ref }}
   Test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: pwsh
-        working-directory: src/Compendium.Terraform/infrastructure
+        working-directory: src/Compendium.Terraform/module
     steps:
     - name: Checkout
       uses: actions/checkout@v3
       with:
         persist-credentials: false
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ${{ env.TERRAFORM_VERSION }}
+        terraform_wrapper: false
     - name: terraform init
       run: ./../../../build/scripts/Initialize-Terraform.ps1 
     - name: terraform fmt
       run: ./../../../build/scripts/Test-TerraformFormat.ps1 
     - name: terraform validate
-      run: ./../../../build/scripts/Test-Terraform.ps1 
+      run: ./../../../build/scripts/Test-TerraformValidate.ps1 
+    - name: terraform test
+      run: ./../../../build/scripts/Test-Terraform.ps1
     - name: terraform plan
       run: ./../../../build/scripts/Build-Terraform.ps1 -PlanName "terraform.tfplan"
       env:
@@ -61,7 +69,7 @@ jobs:
     - name: terraform apply
       run: ./../../../build/scripts/Deploy-Terraform.ps1 -PlanName "terraform.tfplan"
   Build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs:
     - SemanticVersion
     - Test
@@ -72,19 +80,19 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - uses: nuget/setup-nuget@v1
+    - uses: nuget/setup-nuget@v2
       with:
         nuget-version: ${{ env.NUGET_VERSION }}
     - name: Package Template
       run: ./../build/scripts/Export-Package.ps1 -Nuspec "Compendium.Terraform.nuspec" -SemanticVersion "${{ needs.SemanticVersion.outputs.semantic_version }}"
     - name: Publish Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ env.ARTIFACT_NAME }}
         path: src/${{ env.PACKAGE_NAME }}
   Release:
     if: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs:
     - SemanticVersion
     - Build
@@ -95,11 +103,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Download Artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: ${{ env.ARTIFACT_NAME }}
         path: a/${{ env.ARTIFACT_NAME }}
-    - uses: nuget/setup-nuget@v1
+    - uses: nuget/setup-nuget@v2
       with:
         nuget-api-key: ${{ secrets.NUGETAPIKEY }}
         nuget-version: ${{ env.NUGET_VERSION }}
