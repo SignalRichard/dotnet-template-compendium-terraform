@@ -22,11 +22,12 @@
     <file src="Compendium.Terraform\module\.gitignore" target="content\.gitignore" />
     <file src="Compendium.Terraform\module\backend.tf" target="content\backend.tf" />
     <file src="Compendium.Terraform\module\config.local.tfbackend" target="content\config.local.tfbackend" />
+    <file src="Compendium.Terraform\module\locals.tf" target="content\locals.tf" />
     <file src="Compendium.Terraform\module\main.tf" target="content\main.tf" />
     <file src="Compendium.Terraform\module\outputs.tf" target="content\outputs.tf" />
     <file src="Compendium.Terraform\module\providers.tf" target="content\providers.tf" />
     <file src="Compendium.Terraform\module\README.md" target="content\README.md" />
+    <file src="Compendium.Terraform\module\terraform.tf" target="content\terraform.tf" />
     <file src="Compendium.Terraform\module\variables.tf" target="content\variables.tf" />
-    <file src="Compendium.Terraform\module\versions.tf" target="content\versions.tf" />
   </files>
 </package>
