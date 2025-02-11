@@ -11,6 +11,7 @@
     <description>Terraform module.</description>
     <copyright>Copyright (c) 2023 Richard Bolhofer</copyright>
     <tags>dotnet-new templates terraform</tags>
+    <readme>content\.template.config\README.md</readme>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
