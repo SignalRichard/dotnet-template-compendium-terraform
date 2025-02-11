@@ -1,3 +1,3 @@
 # Compendium.Terraform Template
 
-Custom Terraform template for dotnet new.
+Custom Terraform module template for dotnet new.
